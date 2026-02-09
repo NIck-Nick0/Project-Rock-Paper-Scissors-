@@ -30,14 +30,18 @@ return x
 
 
 
-let HumanChoice = getHumanChoice() ; 
-let ComputerChoice = getComputerChoice() ;
+let HumanChoice ;
+let ComputerChoice ;
 
 
 
 
 
 function playRound (){
+
+
+HumanChoice = getHumanChoice() ; 
+ComputerChoice = getComputerChoice() ;
 
 console.log(HumanChoice)  
 console.log(ComputerChoice)  
@@ -79,9 +83,16 @@ return 0 }
 }
 
 
-let score = playRound ()
- 
- console.log(score)
+
+
+
+
+
+let score ;
+
+function getscore ()
+{
+score = playRound () ;
 
 if (score == 1 ){
 humanScore = humanScore + 1 
@@ -89,6 +100,13 @@ humanScore = humanScore + 1
 else if (score == -1 ){
 computerScore = computerScore + 1 
 }
-
-
 console.log ("your score is " +humanScore+ " bot score is "+computerScore)
+}
+
+
+
+for (let i = 0; i < 5; i++) {
+getscore () ; 
+
+}
+
